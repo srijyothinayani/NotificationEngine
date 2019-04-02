@@ -6,7 +6,7 @@ var Agenda = require('agenda'),
     agendaNotificationJob = new Agenda({ db: { address: mongoHost, collection: 'agendaJobs' } });
 
 agendaNotificationJob.define('execute', function (job, done) {
-    request('http://localhost:5004/contents/jobs', function (error, response, body) {
+    request('http://192.169.243.70:5004/contents/jobs', function (error, response, body) {
         var responses = JSON.parse(body);
         responses.data.forEach(function (singleJob) {
             console.log(singleJob);
