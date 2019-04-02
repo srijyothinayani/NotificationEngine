@@ -1,0 +1,52 @@
+{
+    "modules": {
+      "one-day-before-reminder": "./modules/oneDayBeforeReminder.js",
+      "one-hour-before-reminder": "./modules/oneHourBeforeReminder.js"
+    },
+    "sendgrid_api": [
+      {
+        "get": "https://api.sendgrid.com/api/bounces.get.json",
+        "delete": "https://api.sendgrid.com/api/bounces.delete.json"
+      },
+      {
+        "get": "https://api.sendgrid.com/api/spamreports.get.json",
+        "delete": "https://api.sendgrid.com/api/spamreports.delete.json"
+      },
+      {
+        "get": "https://api.sendgrid.com/api/blocks.get.json",
+        "delete": "https://api.sendgrid.com/api/blocks.delete.json"
+      },
+      {
+        "get": "https://api.sendgrid.com/api/invalidemails.get.json",
+        "delete": "https://api.sendgrid.com/api/invalidemails.delete.json"
+      },
+      {
+        "get": "https://api.sendgrid.com/api/unsubscribes.get.json",
+        "delete": "https://api.sendgrid.com/api/unsubscribes.delete.json"
+      }
+  
+    ],
+    "reminder_level":{
+      "oneDay" : {
+        "message_type":"TS_ONE_DAY_REMINDER",
+        "content" :"You have an appointment with Doctor alerted by Vortex scheduled for tomorrow.",
+        "typeid" : 4,
+        "levelid" : 4,
+        "status" : "sent"
+      },
+      "oneHour" : {
+        "message_type":"TS_ONE_HOUR_REMINDER",
+        "content" :"Your appointment with Doctor will start in an hour.",
+        "typeid" : 4,
+        "levelid" : 5,
+        "status" : "sent"
+      }
+    },
+    "postageapp_api": {
+      "get_suppression_list": "https://api.postageapp.com/v.1.0/get_suppression_list.json"
+    },
+    "max-no-of-emails": 1000,
+    "testing_read_emails_count": 50
+  }
+
+  
